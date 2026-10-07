@@ -81,6 +81,8 @@
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
   .brand { font-family: var(--serif); font-size: 1.5rem; text-decoration: none; letter-spacing: -.01em; }
   .brand span { color: var(--accent); }
+  .brand { opacity: 0; visibility: hidden; transform: translateY(4px); transition: opacity .2s, transform .2s, visibility .2s; }
+  .nav.show-brand .brand { opacity: 1; visibility: visible; transform: none; }
   .nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
   .nav ul a { text-decoration: none; font-size: .9rem; font-weight: 500; color: var(--text-dim); padding: 8px 12px; border-radius: 999px; transition: color .15s, background .15s; }
   .nav-end { display: flex; align-items: center; gap: 8px; }
@@ -618,6 +620,10 @@
   });
 
   var nav = document.getElementById('nav');
+  // Show the name in the bar only once the hero name has scrolled out of view.
+  new IntersectionObserver(function (e) {
+    nav.classList.toggle('show-brand', !e[0].isIntersecting);
+  }, { rootMargin: '-64px 0px 0px 0px' }).observe(document.querySelector('h1'));
   addEventListener('scroll', function () { nav.classList.toggle('scrolled', scrollY > 8); }, { passive: true });
 
   var toast = document.getElementById('toast'), timer;
