@@ -191,11 +191,11 @@
   }
   .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
   .badge.live { color: var(--good); border-color: color-mix(in srgb, var(--good) 35%, transparent); }
-  .badge.team { color: var(--text); border-color: color-mix(in srgb, var(--text) 30%, transparent); }
+  .badge.team, .badge.client { color: var(--text); border-color: color-mix(in srgb, var(--text) 30%, transparent); }
   .group-label { font: 500 .74rem var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin: 56px 0 0; }
   .badge.public { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, transparent); }
 
-  .featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .featured { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .card {
     position: relative; display: flex; flex-direction: column;
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
@@ -232,8 +232,7 @@
   .repos a { font: .8rem var(--mono); text-decoration: none; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); }
   .repos a:hover { border-color: var(--accent); color: var(--accent); }
 
-  @media (max-width: 960px) { .featured { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 640px) { .featured, .more { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .featured, .more { grid-template-columns: 1fr; } }
 
   /* ---------- Experience ---------- */
   .exp { border-top: 1px solid var(--border); }
@@ -384,10 +383,11 @@
       <div>
         <p class="eyebrow">01 · Selected work</p>
         <h2>Software that ships.</h2>
-        <p class="dek">A retail system in daily use, two team-built platforms for Ugandan users, and practice builds that sharpen the craft.</p>
+        <p class="dek">A business system in daily use, a platform built for a client, two team-built products for Ugandan users, and side projects that sharpen the craft.</p>
       </div>
       <div class="tags" aria-label="Legend">
         <span class="badge live">In production</span>
+        <span class="badge client">Client project</span>
         <span class="badge team">Team project</span>
         <span class="badge public">Open source</span>
         <span class="badge">Private</span>
@@ -398,8 +398,16 @@
       <article class="card">
         <div class="card-top"><span class="mark" aria-hidden="true">PT</span><span class="badge live">In production</span></div>
         <h3>Ptone Shop Management</h3>
-        <p>Point-of-sale and inventory manager for a retail business, running its daily sales and stock for the past six months.</p>
-        <div class="tags"><span>Python</span><span>SQL</span></div>
+        <p>Management system for an agricultural produce business, running its daily operations for the past six months: sales and invoicing, stock and goods received notes, cash, bank and Mobile Money accounts, expenses, and profit and loss reporting. Four user roles, with admin approval before anyone gets access.</p>
+        <div class="tags"><span>Python</span><span>Django</span><span>PostgreSQL</span><span>Bootstrap</span></div>
+        <div class="card-link">Private: <a href="#contact">ask for a walkthrough</a></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="mark" aria-hidden="true">SM</span><span class="badge client">Client · Private</span></div>
+        <h3>Incident &amp; Service Management Platform</h3>
+        <p>Enterprise IT service desk built for a client: incidents, service requests and a self-service knowledge base. SLA policies with automatic breach alerts, rule-based ticket assignment, escalation approvals, role-based access, satisfaction surveys and an executive insights dashboard.</p>
+        <div class="tags"><span>Django REST Framework</span><span>React</span><span>PostgreSQL</span><span>JWT</span></div>
         <div class="card-link">Private: <a href="#contact">ask for a walkthrough</a></div>
       </article>
 
@@ -420,8 +428,12 @@
       </article>
     </div>
 
-    <p class="group-label">Practice builds &amp; side projects</p>
+    <p class="group-label">Side projects &amp; practice builds</p>
     <div class="more">
+      <div class="row">
+        <h3>CleanConnect Uganda</h3><span class="badge">In progress</span>
+        <p>My own idea: customers describe a cleaning job in plain words, AI scopes it and estimates a price range, then matches them with verified local providers. Django REST backend, Next.js frontend, PostgreSQL in Docker.</p>
+      </div>
       <div class="row">
         <h3><a class="stretch" href="https://github.com/briangita/Nyondo-Hardware-Project" target="_blank" rel="noopener">Nyondo Hardware ERP</a></h3><span class="badge public">Open source</span>
         <p>Practice Django ERP modelled on a hardware business, covering sales, inventory, suppliers, customer financing and reporting. Users need admin approval before they get access.</p>
@@ -565,14 +577,15 @@
       <div class="panel">
         <h4>Core stack</h4>
         <ul>
-          <li>Python</li><li>Django</li><li>PostgreSQL &amp; SQLite</li><li>HTML, CSS &amp; Bootstrap</li>
-          <li>JavaScript</li><li>Git &amp; GitHub</li><li>Pytest &amp; TDD</li><li>Render</li><li>Alteryx</li>
+          <li>Python</li><li>Django &amp; DRF</li><li>PostgreSQL &amp; SQLite</li><li>React &amp; Next.js</li>
+          <li>JavaScript &amp; TypeScript</li><li>HTML, CSS &amp; Bootstrap</li><li>Docker Compose</li><li>Git &amp; GitHub</li>
+          <li>Pytest &amp; TDD</li><li>Render</li><li>Alteryx</li>
         </ul>
       </div>
       <div class="panel learning">
         <h4>Currently learning</h4>
         <ul>
-          <li>REST APIs</li><li>Docker &amp; Kubernetes</li><li>CI/CD</li><li>LangChain / OpenAI</li><li>React &amp; Flutter</li><li>Software architecture</li>
+          <li>Kubernetes</li><li>CI/CD</li><li>LangChain / OpenAI</li><li>Flutter</li><li>Software architecture</li>
         </ul>
       </div>
     </div>
