@@ -181,6 +181,8 @@
   }
   .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
   .badge.live { color: var(--good); border-color: color-mix(in srgb, var(--good) 35%, transparent); }
+  .badge.team { color: var(--text); border-color: color-mix(in srgb, var(--text) 30%, transparent); }
+  .group-label { font: 500 .74rem var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin: 56px 0 0; }
   .badge.public { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, transparent); }
 
   .featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -204,7 +206,7 @@
   .card a.stretch::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
   .card a.stretch:hover { color: var(--accent); }
 
-  .more { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px; margin-top: 48px; }
+  .more { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px; margin-top: 16px; }
   .row {
     position: relative; display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: baseline;
     padding: 18px 0; border-top: 1px solid var(--border);
@@ -353,8 +355,8 @@
 
     <div class="stats">
       <div class="stat"><div class="num">7+</div><div class="label">Years in IT audit</div></div>
-      <div class="stat"><div class="num">14</div><div class="label">GitHub repositories</div></div>
-      <div class="stat"><div class="num">4</div><div class="label">Professional certifications</div></div>
+      <div class="stat"><div class="num">6 mo</div><div class="label">Ptone running in production</div></div>
+      <div class="stat"><div class="num">2</div><div class="label">Team platforms, lead contributor</div></div>
       <div class="stat"><div class="num">1+</div><div class="label">Year freelance development</div></div>
     </div>
   </div>
@@ -365,11 +367,12 @@
     <div class="sec-head">
       <div>
         <p class="eyebrow">01 — Selected work</p>
-        <h2>Software for <em>real</em> businesses.</h2>
-        <p class="dek">Built for a hardware shop, a hospital front desk, an audit team, and a few things in between.</p>
+        <h2>Software that <em>ships</em>.</h2>
+        <p class="dek">A retail system in daily use, two team-built platforms for Ugandan users, and practice builds that sharpen the craft.</p>
       </div>
       <div class="tags" aria-label="Legend">
         <span class="badge live">In production</span>
+        <span class="badge team">Team project</span>
         <span class="badge public">Open source</span>
         <span class="badge">Private</span>
       </div>
@@ -377,31 +380,40 @@
 
     <div class="featured">
       <article class="card">
-        <div class="card-top"><span class="mark" aria-hidden="true">NH</span><span class="badge public">Open source</span></div>
-        <h3><a class="stretch" href="https://github.com/briangita/Nyondo-Hardware-Project" target="_blank" rel="noopener">Nyondo Hardware ERP</a></h3>
-        <p>Role-based Django ERP for NYONDO General Hardware — sales, inventory, stock receipts, suppliers, customer financing, profitability reporting, dashboards and Excel export, behind secure multi-role auth.</p>
-        <div class="tags"><span>Python</span><span>Django</span><span>PostgreSQL</span></div>
-        <div class="card-link">View on GitHub ↗</div>
-      </article>
-
-      <article class="card">
         <div class="card-top"><span class="mark" aria-hidden="true">PT</span><span class="badge live">In production</span></div>
         <h3>Ptone Shop Management</h3>
-        <p>Point-of-sale and inventory manager running in production for a real retail business, handling its daily sales and stock.</p>
+        <p>Point-of-sale and inventory manager for a retail business — running its daily sales and stock for the past six months.</p>
         <div class="tags"><span>Python</span><span>SQL</span></div>
         <div class="card-link">Private — <a href="#contact">ask for a walkthrough</a></div>
       </article>
 
       <article class="card">
-        <div class="card-top"><span class="mark" aria-hidden="true">PE</span><span class="badge public">Open source</span></div>
-        <h3><a class="stretch" href="https://github.com/briangita/Parkease-Project" target="_blank" rel="noopener">ParkEase</a></h3>
-        <p>Digitizes parking-facility operations — vehicle registration, parking, tire and battery services — with role permissions, admin approval workflow, automated charges, receipts and reporting.</p>
-        <div class="tags"><span>Python</span><span>Django</span></div>
+        <div class="card-top"><span class="mark" aria-hidden="true">SY</span><span class="badge team">Team · Open source</span></div>
+        <h3><a class="stretch" href="https://github.com/Grace256c/Sauti-Yo" target="_blank" rel="noopener">Sauti Yo</a></h3>
+        <p>Phone-first platform making verified legal rights information reachable over USSD, SMS and voice — no smartphone needed. Built for the Africa's Talking Women in Tech Hackathon 2026. I was lead contributor: the USSD, SMS and voice handlers, AI classification fallback, and safety features like a Quick Exit on every screen.</p>
+        <div class="tags"><span>Python</span><span>Django</span><span>Africa's Talking</span></div>
         <div class="card-link">View on GitHub ↗</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="mark" aria-hidden="true">TV</span><span class="badge team">Team · Private</span></div>
+        <h3>Tuviora</h3>
+        <p>Event management platform for organizers, teams and attendees — registration, QR tickets, Mobile Money payments, team tasks and SMS/voice alerts. Lead contributor; payments confirm only via signed webhook and secrets live outside the code.</p>
+        <div class="tags"><span>Python</span><span>Django</span><span>MarzPay</span><span>SMS · Voice</span></div>
+        <div class="card-link">Private — <a href="#contact">ask for a walkthrough</a></div>
       </article>
     </div>
 
+    <p class="group-label">Practice builds &amp; side projects</p>
     <div class="more">
+      <div class="row">
+        <h3><a class="stretch" href="https://github.com/briangita/Nyondo-Hardware-Project" target="_blank" rel="noopener">Nyondo Hardware ERP</a></h3><span class="badge public">Open source</span>
+        <p>Practice Django ERP modelled on a hardware business — sales, inventory, suppliers, customer financing and reporting. Users need admin approval before they get access.</p>
+      </div>
+      <div class="row">
+        <h3><a class="stretch" href="https://github.com/briangita/Parkease-Project" target="_blank" rel="noopener">ParkEase</a></h3><span class="badge public">Open source</span>
+        <p>Practice Django system for a parking facility — parking, tyre and battery services, automated charges and receipts, with role permissions and an approval workflow.</p>
+      </div>
       <div class="row">
         <h3>Technology Assurance GPT</h3><span class="badge">Private</span>
         <p>AI assistant encoding enterprise audit knowledge — ITGC testing, JML reviews, change management and evidence documentation.</p>
@@ -414,23 +426,15 @@
         <h3><a class="stretch" href="https://github.com/briangita/AI-Agent" target="_blank" rel="noopener">AI Agent</a></h3><span class="badge public">Open source</span>
         <p>LangChain + OpenAI agent that uses tool-calling with Wikipedia and DuckDuckGo search to answer questions autonomously.</p>
       </div>
-      <div class="row">
-        <h3><a class="stretch" href="https://github.com/briangita/256Taxapp" target="_blank" rel="noopener">256Taxapp</a></h3><span class="badge public">Open source</span>
-        <p>Calculates an employee's net pay from gross salary using Uganda's PAYE tax bands.</p>
-      </div>
-      <div class="row">
-        <h3><a class="stretch" href="https://github.com/briangita/Task-tracking-app" target="_blank" rel="noopener">Task Tracking App</a></h3><span class="badge public">Open source</span>
-        <p>A lightweight tracker for keeping personal and team work organized.</p>
-      </div>
     </div>
 
     <div class="repos">
       <span class="label">More on GitHub:</span>
+      <a href="https://github.com/briangita/256Taxapp" target="_blank" rel="noopener">256Taxapp</a>
+      <a href="https://github.com/briangita/NyondoStock" target="_blank" rel="noopener">NyondoStock</a>
+      <a href="https://briangita.github.io/Nyondo-Forms-CSE/" target="_blank" rel="noopener">Nyondo site (live)</a>
       <a href="https://github.com/briangita/Stock-and-sale" target="_blank" rel="noopener">Stock-and-sale</a>
-      <a href="https://github.com/briangita/Student-attendance" target="_blank" rel="noopener">Student-attendance</a>
-      <a href="https://github.com/briangita/cseblog" target="_blank" rel="noopener">cseblog</a>
-      <a href="https://github.com/briangita/nyondo_sql_lab" target="_blank" rel="noopener">nyondo_sql_lab</a>
-      <a href="https://github.com/briangita/OPEN-LABS" target="_blank" rel="noopener">OPEN-LABS</a>
+      <a href="https://github.com/briangita/Task-tracking-app" target="_blank" rel="noopener">Task-tracking-app</a>
       <a href="https://github.com/briangita?tab=repositories" target="_blank" rel="noopener">All repos →</a>
     </div>
   </div>
